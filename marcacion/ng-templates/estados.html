@@ -1,0 +1,57 @@
+<div class="content all-icons">
+    <div ng-repeat="estado in $ctrl.estados track by $index" class="font-icon-list col-lg-2 col-md-2 col-sm-4 col-xs-6 col-xs-6">
+      <div class="font-icon-detail">
+        <i class="{{estado.est_icon ? estado.est_icon: 'pe-7s-hammer'}}" 
+      editable-text="estado.est_icon" onbeforesave="$ctrl.updateEstadoIcono(estado, $data)"
+      style="cursor: pointer;">
+      </i>
+        <!-- <input type="text" value="{{estado.est_nombre}}"> -->
+        <br><span editable-text="estado.est_nombre" style="cursor: pointer;"
+        onbeforesave="$ctrl.updateEstadoNombre(estado, $data)">{{estado.est_nombre}}</span> <br>
+        <i class="fa fa-trash" aria-hidden="true" style="cursor: pointer;" ng-click="$ctrl.editEstado(estado.est_id)"></i>
+        <!-- 30% -->
+      </div>
+    </div>
+    
+    <div class="font-icon-list col-lg-2 col-md-2 col-sm-4 col-xs-6 col-xs-6">
+      <div class="font-icon-detail">
+      <i class="pe-7s-plus" style="cursor: pointer;" ng-click="$ctrl.agregarEstado = !$ctrl.agregarEstado"></i>
+        <input type="text" value="Agregar Estado">
+
+      </div>
+
+    </div>
+    <div class="col-md-8" ng-show="$ctrl.agregarEstado">
+      <div class="card">
+          <div class="header">
+              <h4 class="title">Nuevo Estado</h4>
+          </div>
+          <div class="content">
+              <form lpformnum="1">
+                  <div class="row">
+                      <div class="col-md-3">
+                          <div class="form-group">
+                              <label>Nombre del Estado</label>
+                              <input type="text" ng-model="$ctrl.nEstado" class="form-control" placeholder="Nombre Estado" value="michael23">
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-group">
+                              <label>Icono del Estado</label>
+                              <input type="text" ng-model="$ctrl.iEstado" class="form-control" placeholder="Icono Estado" value="michael23">
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-group">
+                              <label>Color</label>
+                              <input type="text" ng-model="$ctrl.cEstado" class="form-control" placeholder="Color Estado" value="michael23">
+                          </div>
+                      </div>
+
+                  <button type="submit" ng-click="$ctrl.crearEstado()" class="btn btn-info btn-fill pull-right">Crear Estado </button>
+                  <div class="clearfix"></div>
+              </form>
+          </div>
+      </div>
+  </div>
+  </div>

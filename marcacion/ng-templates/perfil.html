@@ -1,0 +1,47 @@
+<div class="col-md-12">
+    <div class="card">
+      <div class="header">
+          <h4 class="title">Reporte Diario</h4>
+          <h5>{{$ctrl.nombre}}</h3>
+          <p class="category">Seleccione la fecha
+            <select class="form-control" ng-model="fecha" ng-options="x.fecha for x in $ctrl.fechasTotales">
+              <!-- <option>{{x.first_name.val()}}</option> -->
+            </select>
+          </p>
+      </div>
+      <div class="content">
+          <div class="typo-line">
+              <p class="category">Detalle</p>
+              <blockquote>
+               <p>Disponible: 
+                <i>{{fecha.DisponibleHora }} 
+                  <span ng-if="fecha.DisponibleHora" class="animate-if">h</span>
+                </i> 
+               </p>
+               <p>No disponible: 
+                <i>{{fecha.NoDisponibleHora }} 
+                  <span ng-if="fecha.NoDisponibleHora" class="animate-if">h</span>
+                </i> </p>
+               <p>En llamada: 
+                <i>{{fecha.EnllamadaHora }} 
+                  <span ng-if="fecha.EnllamadaHora" class="animate-if">h</span>
+                </i>
+               </p>
+               <p>Reunion:
+                <i>{{fecha.ReunionHora }} 
+                  <span ng-if="fecha.Reunion" class="animate-if">h</span>
+                </i> 
+               </p>
+               <p>Almuerzo:
+                <i>{{fecha.AlmuerzoHora }} 
+                  <span ng-if="fecha.Almuerzo" class="animate-if">h</span>
+                </i>
+                </p>
+               <small>
+               <!-- Total de horas: 6:52 h -->
+               </small>
+              </blockquote>
+          </div>
+      </div>
+    </div>
+  </div>

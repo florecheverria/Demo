@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="header">
+        <h4 class="title">Agentes {{$ctrl.test}}</h4>
+        <!-- <p class="category">Here is a subtitle for this table</p> -->
+      </div>
+      <div class="content table-responsive table-full-width">
+        <table class="table table-hover table-striped" id="agentesTabla">
+          <thead>
+            <th>Estado</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th></th>
+          </thead>
+          <tbody>
+            <tr ng-repeat="agent in $ctrl.agents track by $index">
+              <td>{{agent.est_nombre}}</td>
+              <td>{{agent.first_name}}</td>
+              <td>{{agent.last_name}}</td>
+              <td> <a href="/perfil/{{agent.id}}">Ver</a> </td>
+            </tr>
+            <!-- <tr>
+              <td></td>
+              <td>Jose</td>
+              <td>Perez</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Maria</td>
+              <td>Ramirez</td>
+            </tr> -->
+          </tbody>
+        </table>
+
+      </div> 
+    </div>
+  </div>
+</div>
