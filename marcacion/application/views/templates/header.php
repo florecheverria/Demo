@@ -58,7 +58,14 @@
 	                        <i class="pe-7s-home"></i>
 	                        <p>Inicio</p>
 	                    </a>
-	                </li><?php
+	                </li>
+									<li>
+	                    <a href="<?php echo site_url() ?>/marcacion/crearestados">
+	                        <i class="pe-7s-repeat"></i>
+	                        <p>Estados</p>
+	                    </a>
+	                </li>
+									<?php
 								} else { ?>
                 <li>
                     <a href="<?php echo site_url() ?>/marcacion">

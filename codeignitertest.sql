@@ -11,7 +11,7 @@
  Target Server Version : 50717
  File Encoding         : 65001
 
- Date: 27/07/2017 14:44:46
+ Date: 29/07/2017 01:01:34
 */
 
 SET NAMES utf8mb4;
@@ -249,7 +249,7 @@ CREATE TABLE `est_estados` (
   `est_icon` varchar(25) DEFAULT NULL,
   `est_activo` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`est_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of est_estados
@@ -301,7 +301,7 @@ CREATE TABLE `log_logactividades` (
   KEY `fk_iti_usu_id` (`log_usu_id`) USING BTREE,
   KEY `fk_iti_est_id` (`log_est_id`) USING BTREE,
   CONSTRAINT `fk_log_est_id` FOREIGN KEY (`log_est_id`) REFERENCES `est_estados` (`est_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of log_logactividades
@@ -321,6 +321,8 @@ INSERT INTO `log_logactividades` VALUES (24, 7, 4, '127.0.0.1', '2017-07-27 10:5
 INSERT INTO `log_logactividades` VALUES (25, 7, 3, '127.0.0.1', '2017-07-27 10:57:26', '2017-07-27 10:57:56');
 INSERT INTO `log_logactividades` VALUES (26, 7, 6, '127.0.0.1', '2017-07-27 10:57:56', '2017-07-27 10:59:26');
 INSERT INTO `log_logactividades` VALUES (38, 1, 5, '190.62.191.228', '2017-07-27 20:30:34', NULL);
+INSERT INTO `log_logactividades` VALUES (39, 7, 1, '::1', '2017-07-27 21:56:01', NULL);
+INSERT INTO `log_logactividades` VALUES (40, 6, 1, '::1', '2017-07-27 22:07:47', NULL);
 COMMIT;
 
 -- ----------------------------
@@ -333,14 +335,7 @@ CREATE TABLE `login_attempts` (
   `login` varchar(100) DEFAULT NULL,
   `time` int(11) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of login_attempts
--- ----------------------------
-BEGIN;
-INSERT INTO `login_attempts` VALUES (1, '::1', 'admin', 1501176516);
-COMMIT;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for migrations
@@ -386,13 +381,13 @@ CREATE TABLE `users` (
 -- Records of users
 -- ----------------------------
 BEGIN;
-INSERT INTO `users` VALUES (1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1501180593, 1, 'Admin', 'istrator', 'ADMIN', '0');
-INSERT INTO `users` VALUES (2, '127.0.0.1', 'l.velasquez1308@gmail.com', '$2y$08$APb/CP8yzEB9Ba7aTKJKCeKyGD6J0P4kUbEjCbIChG0.ZXZucBTJ6', '', 'l.velasquez1308@gmail.com', NULL, NULL, NULL, NULL, 1500865703, NULL, 1, 'Luis', 'Velasquez', 'REN', '332223232');
-INSERT INTO `users` VALUES (3, '127.0.0.1', 'flor@gmail.com', '$2y$08$hVcVPlqmhfdR0F0ac8otM..BSlGMhsQqH4Lc8Rxq3tYJOdq2TQ27S', '', 'flor@gmail.com', NULL, NULL, NULL, NULL, 1501044838, NULL, 1, 'Flor', 'Canas', 'One Link', '3224242');
-INSERT INTO `users` VALUES (4, '127.0.0.1', 'honorina@gmail.com', '$2y$08$Y.PUHsMnZWz3mk8BaJkzPuSd10wsEQ/B/3VH0nLBfVrcKdqiG0g72', '', 'honorina@gmail.com', NULL, NULL, NULL, NULL, 1501044873, NULL, 1, 'Honorina', 'Munoz', 'One Link', '24241242424');
-INSERT INTO `users` VALUES (5, '127.0.0.1', 'catalino@gmail.com', '$2y$08$cfk0rZKcdjd1Pf2ARf8TVuWtsERVHROVIGSy0Qk08kU2ZvrU4DAzW', '', 'catalino@gmail.com', NULL, NULL, NULL, NULL, 1501090927, NULL, 1, 'Catalino', 'Esparsa', 'One Link', '334343434');
-INSERT INTO `users` VALUES (6, '127.0.0.1', 'rebeca@gmail.com', '$2y$08$Y2z8EtlFlOk3QQLKKlbp4eO3BtxznG/m8EU.wGGLxENvnVYZo9Od2', '', 'rebeca@gmail.com', NULL, NULL, NULL, NULL, 1501090959, NULL, 1, 'Rebeca', 'Jones', 'One Link', '33434343');
-INSERT INTO `users` VALUES (7, '127.0.0.1', 'testing@test.com', '$2y$08$V4FfQ2R7MyTqOFde6qpgyuzT.Vlyu.XDRnwePoyCniry7fRz.0j6K', '', 'testing@test.com', NULL, NULL, NULL, NULL, 1501147031, 1501179086, 1, 'John', 'Doe', 'ninguna', '451-254-8547');
+INSERT INTO `users` VALUES (1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1501310206, 1, 'Admin', 'istrator', 'ADMIN', '0');
+INSERT INTO `users` VALUES (2, '127.0.0.1', 'user@gmail.com', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'user@gmail.com', NULL, NULL, NULL, NULL, 1500865703, NULL, 1, 'Jose', 'Velasquez', 'ninguna', '332223232');
+INSERT INTO `users` VALUES (3, '127.0.0.1', 'flor@gmail.com', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'flor@gmail.com', NULL, NULL, NULL, NULL, 1501044838, NULL, 1, 'Flor', 'Canas', 'One Link', '3224242');
+INSERT INTO `users` VALUES (4, '127.0.0.1', 'honorina@gmail.com', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'honorina@gmail.com', NULL, NULL, NULL, NULL, 1501044873, 1501311454, 1, 'Honorina', 'Munoz', 'One Link', '24241242424');
+INSERT INTO `users` VALUES (5, '127.0.0.1', 'catalino@gmail.com', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'catalino@gmail.com', NULL, NULL, NULL, NULL, 1501090927, NULL, 1, 'Catalino', 'Esparsa', 'One Link', '334343434');
+INSERT INTO `users` VALUES (6, '127.0.0.1', 'rebeca@gmail.com', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'rebeca@gmail.com', NULL, NULL, NULL, NULL, 1501090959, 1501193029, 1, 'Rebeca', 'Jones', 'One Link', '33434343');
+INSERT INTO `users` VALUES (7, '127.0.0.1', 'testing@test.com', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'testing@test.com', NULL, NULL, NULL, NULL, 1501147031, 1501310682, 1, 'John', 'Doe', 'ninguna', '451-254-8547');
 COMMIT;
 
 -- ----------------------------
